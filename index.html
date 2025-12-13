@@ -14,8 +14,8 @@
       embedded
       arjs="sourceType: webcam; detectionMode: mono; matrixCodeType: 3x3;"
     >
-      <!-- Hiro Marker: replace the red box with the animated GLB model (cube.glb) -->
-      <a-marker preset="hiro">
+  <!-- Custom pattern marker: uses local marker.patt and marker.png (image for printing/preview) -->
+  <a-marker type="pattern" url="./marker.patt">
         <!-- glTF model entity. Adjust scale/position/rotation if needed -->
         <a-entity
           gltf-model="url(./cube.glb)"
@@ -24,7 +24,7 @@
           rotation="0 0 0"
           animation-mixer
         ></a-entity>
-      </a-marker>
+  </a-marker>
 
       <a-entity camera></a-entity>
     </a-scene>
