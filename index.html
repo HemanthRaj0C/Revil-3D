@@ -1,150 +1,908 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-  <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-  <!-- Animation mixer for playing glTF skeletal animations -->
-  <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@6.1.1/dist/aframe-extras.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/mrdoob/three.js@r145/examples/js/loaders/GLTFLoader.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aframe-animation-mixer@6.0.0/dist/aframe-animation-mixer.min.js"></script>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AR Story Viewer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-darkest: #0D0D0D;
+      --bg-darker: #151515;
+      --bg-dark: #1D1D1D;
+      --bg-panel: #252525;
+      --bg-panel-header: #2D2D2D;
+      --border-color: #3D3D3D;
+      --blender-orange: #E87D0D;
+      --axis-red: #E05555;
+      --axis-green: #5FBF5F;
+      --axis-blue: #5588DD;
+      --text-primary: #EEEEEE;
+      --text-secondary: #888888;
+      --text-dim: #555555;
+    }
 
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene
-      embedded
-      arjs="sourceType: webcam; detectionMode: mono; matrixCodeType: 3x3;"
-    >
-      <!-- Story 1 -->
-      <a-marker type="pattern" url="./Story_1/Patterns/pattern-Scene_1.patt">
-            <a-entity
-              gltf-model="url(./Story_1/Models/Scene_1.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_1/Patterns/pattern-Scene_2.patt">
-            <a-entity
-              gltf-model="url(./Story_1/Models/Scene_2.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_1/Patterns/pattern-Scene_3.patt">
-            <a-entity
-              gltf-model="url(./Story_1/Models/Scene_3.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_1/Patterns/pattern-Scene_4.patt">
-            <a-entity
-              gltf-model="url(./Story_1/Models/Scene_4.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_1/Patterns/pattern-Scene_5.patt">
-            <a-entity
-              gltf-model="url(./Story_1/Models/Scene_5.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <!-- Story 2 -->
-      <a-marker type="pattern" url="./Story_2/Patterns/pattern-Scene_1.patt">
-            <a-entity
-              gltf-model="url(./Story_2/Models/Scene_1.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_2/Patterns/pattern-Scene_2.patt">
-            <a-entity
-              gltf-model="url(./Story_2/Models/Scene_2.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_2/Patterns/pattern-Scene_3.patt">
-            <a-entity
-              gltf-model="url(./Story_2/Models/Scene_3.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <!-- Story 3 -->
-      <a-marker type="pattern" url="./Story_3/Patterns/pattern-Scene_1.patt">
-            <a-entity
-              gltf-model="url(./Story_3/Models/Scene_1.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_3/Patterns/pattern-Scene_2.patt">
-            <a-entity
-              gltf-model="url(./Story_3/Models/Scene_2.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_3/Patterns/pattern-Scene_3.patt">
-            <a-entity
-              gltf-model="url(./Story_3/Models/Scene_3.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <!-- Story 4 -->
-      <a-marker type="pattern" url="./Story_4/Patterns/pattern-Scene_1.patt">
-            <a-entity
-              gltf-model="url(./Story_4/Models/Scene_1.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_4/Patterns/pattern-Scene_2.patt">
-            <a-entity
-              gltf-model="url(./Story_4/Models/Scene_2.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-marker type="pattern" url="./Story_4/Patterns/pattern-Scene_3.patt">
-            <a-entity
-              gltf-model="url(./Story_4/Models/Scene_3.glb)"
-              scale="0.5 0.5 0.5"
-              position="0 0 0"
-              rotation="0 0 0"
-              animation-mixer
-            ></a-entity>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg-darkest);
+      color: var(--text-primary);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* Low Poly Background */
+    .low-poly-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -2;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1D1D1D 100%);
+    }
+
+    .low-poly-bg svg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      opacity: 0.15;
+    }
+
+    /* Animated Grid */
+    .grid-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      perspective: 1000px;
+      overflow: hidden;
+    }
+
+    .grid {
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      left: -50%;
+      bottom: -50%;
+      background-image: 
+        linear-gradient(rgba(232, 125, 13, 0.08) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(232, 125, 13, 0.08) 1px, transparent 1px);
+      background-size: 60px 60px;
+      transform: rotateX(60deg);
+      animation: gridMove 25s linear infinite;
+    }
+
+    @keyframes gridMove {
+      0% { transform: rotateX(60deg) translateY(0); }
+      100% { transform: rotateX(60deg) translateY(60px); }
+    }
+
+    /* Floating Particles */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    .particle {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: var(--blender-orange);
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: float 25s infinite linear;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(100vh); opacity: 0; }
+      5% { opacity: 0.5; }
+      95% { opacity: 0.5; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 0.75rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+      background: rgba(13, 13, 13, 0.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .logo {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .logo::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--blender-orange);
+      border-radius: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--text-primary);
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      position: relative;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      z-index: 1;
+    }
+
+    /* 3D Cube with Inner Structure */
+    .cube-wrapper {
+      position: relative;
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 3rem;
+    }
+
+    .cube-container {
+      perspective: 800px;
+      width: 100%;
+      height: 100%;
+    }
+
+    .cube {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      animation: rotateCube 15s infinite linear;
+    }
+
+    .cube-face {
+      position: absolute;
+      width: 160px;
+      height: 160px;
+      border: 1px solid var(--blender-orange);
+      background: rgba(232, 125, 13, 0.03);
+    }
+
+    .cube-face.front { transform: translateZ(80px); }
+    .cube-face.back { transform: rotateY(180deg) translateZ(80px); }
+    .cube-face.right { transform: rotateY(90deg) translateZ(80px); }
+    .cube-face.left { transform: rotateY(-90deg) translateZ(80px); }
+    .cube-face.top { transform: rotateX(90deg) translateZ(80px); }
+    .cube-face.bottom { transform: rotateX(-90deg) translateZ(80px); }
+
+    /* Inner cube */
+    .inner-cube {
+      position: absolute;
+      width: 60px;
+      height: 60px;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+      animation: rotateCubeReverse 10s infinite linear;
+    }
+
+    .inner-cube .cube-face {
+      width: 60px;
+      height: 60px;
+      border-color: var(--axis-blue);
+      background: rgba(85, 136, 221, 0.05);
+    }
+
+    .inner-cube .cube-face.front { transform: translate(-50%, -50%) translateZ(30px); }
+    .inner-cube .cube-face.back { transform: translate(-50%, -50%) rotateY(180deg) translateZ(30px); }
+    .inner-cube .cube-face.right { transform: translate(-50%, -50%) rotateY(90deg) translateZ(30px); }
+    .inner-cube .cube-face.left { transform: translate(-50%, -50%) rotateY(-90deg) translateZ(30px); }
+    .inner-cube .cube-face.top { transform: translate(-50%, -50%) rotateX(90deg) translateZ(30px); }
+    .inner-cube .cube-face.bottom { transform: translate(-50%, -50%) rotateX(-90deg) translateZ(30px); }
+
+    /* Axis lines through cube */
+    .cube-axis {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-style: preserve-3d;
+    }
+
+    .cube-axis .axis-line {
+      position: absolute;
+      transform-origin: center;
+    }
+
+    .cube-axis .x-line {
+      width: 180px;
+      height: 2px;
+      background: var(--axis-red);
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+    }
+
+    .cube-axis .y-line {
+      width: 2px;
+      height: 180px;
+      background: var(--axis-green);
+      transform: translate(-50%, -50%);
+      opacity: 0.6;
+    }
+
+    .cube-axis .z-line {
+      width: 180px;
+      height: 2px;
+      background: var(--axis-blue);
+      transform: translate(-50%, -50%) rotateY(90deg);
+      opacity: 0.6;
+    }
+
+    /* Vertices */
+    .vertex {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: var(--blender-orange);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    @keyframes rotateCube {
+      0% { transform: rotateX(-15deg) rotateY(0deg); }
+      100% { transform: rotateX(-15deg) rotateY(360deg); }
+    }
+
+    @keyframes rotateCubeReverse {
+      0% { transform: rotateX(15deg) rotateY(360deg); }
+      100% { transform: rotateX(15deg) rotateY(0deg); }
+    }
+
+    /* Axis Gizmo */
+    .axis-gizmo {
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      width: 70px;
+      height: 70px;
+      opacity: 0.8;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      letter-spacing: -1px;
+    }
+
+    .hero h1 span {
+      color: var(--blender-orange);
+    }
+
+    .hero p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    /* CTA Button */
+    .cta-button {
+      display: inline-block;
+      padding: 0.85rem 2rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #000;
+      background: var(--blender-orange);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .cta-button:hover {
+      background: #f58a1f;
+    }
+
+    .cta-button:active {
+      transform: scale(0.98);
+    }
+
+    /* Section Styling */
+    section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--blender-orange);
+      margin-bottom: 2rem;
+    }
+
+    /* Panel - Blender style */
+    .panel {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+    }
+
+    .panel-header {
+      background: var(--bg-panel-header);
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .panel-header::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: var(--blender-orange);
+      border-radius: 1px;
+    }
+
+    .panel-content {
+      padding: 1rem;
+    }
+
+    .panel-content p {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Steps */
+    .steps-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .step-item {
+      display: flex;
+      align-items: stretch;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-bottom: none;
+      overflow: hidden;
+    }
+
+    .step-item:first-child {
+      border-radius: 6px 6px 0 0;
+    }
+
+    .step-item:last-child {
+      border-bottom: 1px solid var(--border-color);
+      border-radius: 0 0 6px 6px;
+    }
+
+    .step-num {
+      width: 50px;
+      min-width: 50px;
+      background: var(--bg-panel-header);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--blender-orange);
+      border-right: 1px solid var(--border-color);
+    }
+
+    .step-content {
+      padding: 1rem 1.25rem;
+      flex: 1;
+    }
+
+    .step-content h3 {
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .step-content p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    /* Stories Grid */
+    .stories-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .story-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+
+    .story-card:hover {
+      border-color: var(--blender-orange);
+    }
+
+    .story-preview {
+      height: 100px;
+      background: var(--bg-darker);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Wireframe pattern for story preview */
+    .story-preview::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(var(--border-color) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border-color) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.5;
+    }
+
+    .story-preview::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      height: 40px;
+      border: 2px solid var(--blender-orange);
+      transform: translate(-50%, -50%) rotate(45deg);
+      opacity: 0.4;
+    }
+
+    .story-info {
+      padding: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .story-info h3 {
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .story-info span {
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+    }
+
+    /* Tips Grid */
+    .tips-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .tip-item {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-color);
+      border-radius: 6px;
+      padding: 1rem 1.25rem;
+      border-left: 3px solid var(--blender-orange);
+    }
+
+    .tip-item h4 {
+      font-size: 0.9rem;
+      font-weight: 500;
+      margin-bottom: 0.35rem;
+    }
+
+    .tip-item p {
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+    }
+
+    /* Decorative wireframe element */
+    .wireframe-decoration {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.15;
+    }
+
+    .wireframe-left {
+      left: 5%;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .wireframe-right {
+      right: 5%;
+      top: 30%;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-color);
+      padding: 2rem;
+      text-align: center;
+      background: var(--bg-darker);
+    }
+
+    footer p {
+      color: var(--text-dim);
+      font-size: 0.8rem;
+    }
+
+    footer span {
+      color: var(--blender-orange);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        padding: 0.75rem 1rem;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      section {
+        padding: 3rem 1rem;
+      }
+
+      .cube-wrapper {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 2rem;
+      }
+
+      .cube-face {
+        width: 120px;
+        height: 120px;
+      }
+
+      .cube-face.front { transform: translateZ(60px); }
+      .cube-face.back { transform: rotateY(180deg) translateZ(60px); }
+      .cube-face.right { transform: rotateY(90deg) translateZ(60px); }
+      .cube-face.left { transform: rotateY(-90deg) translateZ(60px); }
+      .cube-face.top { transform: rotateX(90deg) translateZ(60px); }
+      .cube-face.bottom { transform: rotateX(-90deg) translateZ(60px); }
+
+      .inner-cube {
+        width: 40px;
+        height: 40px;
+      }
+
+      .inner-cube .cube-face {
+        width: 40px;
+        height: 40px;
+      }
+
+      .inner-cube .cube-face.front { transform: translate(-50%, -50%) translateZ(20px); }
+      .inner-cube .cube-face.back { transform: translate(-50%, -50%) rotateY(180deg) translateZ(20px); }
+      .inner-cube .cube-face.right { transform: translate(-50%, -50%) rotateY(90deg) translateZ(20px); }
+      .inner-cube .cube-face.left { transform: translate(-50%, -50%) rotateY(-90deg) translateZ(20px); }
+      .inner-cube .cube-face.top { transform: translate(-50%, -50%) rotateX(90deg) translateZ(20px); }
+      .inner-cube .cube-face.bottom { transform: translate(-50%, -50%) rotateX(-90deg) translateZ(20px); }
+
+      .cube-axis .x-line,
+      .cube-axis .z-line {
+        width: 140px;
+      }
+
+      .cube-axis .y-line {
+        height: 140px;
+      }
+
+      .stories-grid,
+      .tips-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .axis-gizmo {
+        display: none;
+      }
+
+      .wireframe-decoration {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Low Poly Background -->
+  <div class="low-poly-bg">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <polygon points="0,0 200,50 100,150" fill="rgba(232,125,13,0.05)"/>
+      <polygon points="200,50 400,0 300,150" fill="rgba(232,125,13,0.03)"/>
+      <polygon points="100,150 300,150 200,300" fill="rgba(232,125,13,0.04)"/>
+      <polygon points="400,0 600,50 500,200" fill="rgba(232,125,13,0.02)"/>
+      <polygon points="600,50 800,0 700,150" fill="rgba(232,125,13,0.05)"/>
+      <polygon points="800,0 1000,50 900,200" fill="rgba(232,125,13,0.03)"/>
+      <polygon points="1000,50 1200,0 1100,150" fill="rgba(232,125,13,0.04)"/>
+      <polygon points="1200,0 1440,50 1300,200" fill="rgba(232,125,13,0.02)"/>
+      <polygon points="0,300 150,450 50,500" fill="rgba(232,125,13,0.03)"/>
+      <polygon points="150,450 350,400 250,550" fill="rgba(232,125,13,0.05)"/>
+      <polygon points="350,400 550,450 450,600" fill="rgba(232,125,13,0.02)"/>
+      <polygon points="550,450 750,400 650,550" fill="rgba(232,125,13,0.04)"/>
+      <polygon points="750,400 950,450 850,600" fill="rgba(232,125,13,0.03)"/>
+      <polygon points="950,450 1150,400 1050,550" fill="rgba(232,125,13,0.05)"/>
+      <polygon points="1150,400 1350,450 1250,600" fill="rgba(232,125,13,0.02)"/>
+      <polygon points="1350,450 1440,400 1400,600" fill="rgba(232,125,13,0.04)"/>
+      <polygon points="0,600 200,650 100,800" fill="rgba(232,125,13,0.04)"/>
+      <polygon points="200,650 400,600 300,750" fill="rgba(232,125,13,0.02)"/>
+      <polygon points="400,600 600,650 500,800" fill="rgba(232,125,13,0.05)"/>
+      <polygon points="600,650 800,600 700,750" fill="rgba(232,125,13,0.03)"/>
+      <polygon points="800,600 1000,650 900,800" fill="rgba(232,125,13,0.04)"/>
+      <polygon points="1000,650 1200,600 1100,750" fill="rgba(232,125,13,0.02)"/>
+      <polygon points="1200,600 1440,650 1300,800" fill="rgba(232,125,13,0.05)"/>
+    </svg>
+  </div>
+
+  <!-- Animated Grid -->
+  <div class="grid-container">
+    <div class="grid"></div>
+  </div>
+
+  <!-- Floating Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Decorative Wireframe Elements -->
+  <svg class="wireframe-decoration wireframe-left" width="120" height="200" viewBox="0 0 120 200">
+    <line x1="60" y1="0" x2="60" y2="200" stroke="#E87D0D" stroke-width="1"/>
+    <line x1="0" y1="100" x2="120" y2="100" stroke="#E87D0D" stroke-width="1"/>
+    <circle cx="60" cy="100" r="40" fill="none" stroke="#E87D0D" stroke-width="1"/>
+    <circle cx="60" cy="100" r="20" fill="none" stroke="#E87D0D" stroke-width="1"/>
+    <circle cx="60" cy="100" r="4" fill="#E87D0D"/>
+  </svg>
+
+  <svg class="wireframe-decoration wireframe-right" width="100" height="100" viewBox="0 0 100 100">
+    <polygon points="50,10 90,90 10,90" fill="none" stroke="#E87D0D" stroke-width="1"/>
+    <polygon points="50,30 75,80 25,80" fill="none" stroke="#E87D0D" stroke-width="1"/>
+    <circle cx="50" cy="60" r="4" fill="#E87D0D"/>
+  </svg>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="">Blend with Arts</div>
+    <ul class="nav-links">
+      <li><a href="#guide">Guide</a></li>
+      <li><a href="#stories">Stories</a></li>
+      <li><a href="#tips">Tips</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <!-- 3D Cube with Inner Structure -->
+      <div class="cube-wrapper">
+        <div class="cube-container">
+          <div class="cube">
+            <div class="cube-face front"></div>
+            <div class="cube-face back"></div>
+            <div class="cube-face right"></div>
+            <div class="cube-face left"></div>
+            <div class="cube-face top"></div>
+            <div class="cube-face bottom"></div>
+            
+            <!-- Inner Cube -->
+            <div class="inner-cube">
+              <div class="cube-face front"></div>
+              <div class="cube-face back"></div>
+              <div class="cube-face right"></div>
+              <div class="cube-face left"></div>
+              <div class="cube-face top"></div>
+              <div class="cube-face bottom"></div>
+            </div>
+
+            <!-- Axis Lines -->
+            <div class="cube-axis">
+              <div class="axis-line x-line"></div>
+              <div class="axis-line y-line"></div>
+              <div class="axis-line z-line"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1>AR <span>Story</span> Viewer</h1>
+      <p>Scan pattern markers to view animated 3D models in augmented reality directly in your browser.</p>
+      
+      <a href="ar-viewer.html" class="cta-button">Launch AR Viewer</a>
+    </div>
+
+    <!-- Axis Gizmo -->
+    <svg class="axis-gizmo" viewBox="0 0 100 100">
+      <line x1="50" y1="50" x2="90" y2="50" stroke="#E05555" stroke-width="2"/>
+      <text x="93" y="54" fill="#E05555" font-size="11" font-family="Inter">X</text>
+      <line x1="50" y1="50" x2="50" y2="10" stroke="#5FBF5F" stroke-width="2"/>
+      <text x="46" y="7" fill="#5FBF5F" font-size="11" font-family="Inter">Y</text>
+      <line x1="50" y1="50" x2="22" y2="78" stroke="#5588DD" stroke-width="2"/>
+      <text x="12" y="88" fill="#5588DD" font-size="11" font-family="Inter">Z</text>
+      <circle cx="50" cy="50" r="3" fill="#E87D0D"/>
+    </svg>
+  </section>
+
+  <!-- How It Works -->
+  <section id="guide">
+    <h2 class="section-title">How to Use</h2>
+
+    <div class="steps-container">
+      <div class="step-item">
+        <div class="step-num">01</div>
+        <div class="step-content">
+          <h3>Open on your device</h3>
+          <p>Access this page on a smartphone or tablet with a camera</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">02</div>
+        <div class="step-content">
+          <h3>Allow camera access</h3>
+          <p>Grant camera permission when prompted by your browser</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">03</div>
+        <div class="step-content">
+          <h3>Get the markers</h3>
+          <p>Print or display the pattern markers for each story scene</p>
+        </div>
+      </div>
+
+      <div class="step-item">
+        <div class="step-num">04</div>
+        <div class="step-content">
+          <h3>Point and view</h3>
+          <p>Aim your camera at a marker to see the 3D model appear</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stories Preview -->
+  <section id="stories">
+    <h2 class="section-title">Available Stories</h2>
+
+    <div class="stories-grid">
+      <div class="story-card">
+        <div class="story-preview"></div>
+        <div class="story-info">
+          <h3>Story 1</h3>
+          <span>5 scenes</span>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-preview"></div>
+        <div class="story-info">
+          <h3>Story 2</h3>
+          <span>3 scenes</span>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-preview"></div>
+        <div class="story-info">
+          <h3>Story 3</h3>
+          <span>3 scenes</span>
+        </div>
+      </div>
+
+      <div class="story-card">
+        <div class="story-preview"></div>
+        <div class="story-info">
+          <h3>Story 4</h3>
+          <span>3 scenes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tips Section -->
+  <section id="tips">
+    <h2 class="section-title">Tips for Best Results</h2>
+
+    <div class="tips-grid">
+      <div class="tip-item">
+        <h4>Good lighting</h4>
+        <p>Make sure the marker is well-lit and avoid harsh shadows</p>
+      </div>
+
+      <div class="tip-item">
+        <h4>Keep distance</h4>
+        <p>Stay 20-50cm away from the marker for best tracking</p>
+      </div>
+
+      <div class="tip-item">
+        <h4>Flat surface</h4>
+        <p>Place markers on a flat, non-reflective surface</p>
+      </div>
+
+      <div class="tip-item">
+        <h4>Steady hands</h4>
+        <p>Hold your device steady for smoother playback</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>Made with <span>Blender</span> and A-Frame</p>
+  </footer>
+
+  <script>
+    // Create floating particles
+    const particlesContainer = document.getElementById('particles');
+    for (let i = 0; i < 15; i++) {
+      const particle = document.createElement('div');
+      particle.className = 'particle';
+      particle.style.left = Math.random() * 100 + '%';
+      particle.style.animationDelay = Math.random() * 25 + 's';
+      particle.style.animationDuration = (25 + Math.random() * 15) + 's';
+      particlesContainer.appendChild(particle);
+    }
+  </script>
+</body>
 </html>
